@@ -1,8 +1,7 @@
-//Please comment your code I am dumb
-
 const info = require("./botinfo.json");
 const Discord = require("discord.js");
 const client = new Discord.Client();
+
 
 //Easy read list of all kerbebot commands
 const commands = {
@@ -27,7 +26,6 @@ client.on("message", message => {
         let msg = message.content.split(" ");
         let command = msg[0];
         
-        
         /**I refuse to use a switch/case because code environments suck collapsing those**/
         
         //Ping command
@@ -49,11 +47,8 @@ client.on("message", message => {
                 if (commands.hasOwnProperty(key)) {
                     
                     //Did some indentation so its slightly easier to mentally parse whats happening here
-                    finalMessage += "`"
-                                    + key
-                                    + "` "
-                                    + "- "
-                                    + commands[key]
+                    finalMessage += "`" + key + "`"
+                                    + " - " + commands[key]
                                     + "\n";
                 }
             }
